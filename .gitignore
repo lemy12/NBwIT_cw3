@@ -1,2 +1,7 @@
 .gitignore
+<<<<<<< HEAD
 *log*
+=======
+*log*
+*error*
+>>>>>>> c9e61d2 (nowy .gitignore)

@@ -59,9 +59,11 @@ errorNumber() {
 
 pomoc() {
 	echo "--date - wyświetla obecną datę"
-	echo "--logs - tworzy katalog logs, a w nim 100 plików logów"
-	echo "--logs (numer) - tworzy katalog logs, a w nim (numer) plików logów"
+	echo "--logs - tworzy katalog logs, a w nim 100 plików logów w osobnych katalogach"
+	echo "--logs (numer) - tworzy katalog logs, a w nim (numer) plików logów w osobnych katalogach"
 	echo "--help - dostępne komendy"
+	echo "--error - tworzy katalog error, a w nim 100 plików errorów w osobnych katalogach"
+	echo "--error (numer) - tworzy katalog error, a w nim (numer) plików errorów w osobnych katalogach"
 }
 
 
