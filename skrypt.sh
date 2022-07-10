@@ -20,9 +20,10 @@ logsNumber() {
 	cd logs
 	for i in $(seq 1 $1)
 	do
-		echo "log$i.txt" >> log$i.txt
-		echo "$(basename $BASH_SOURCE)" >> log$i.txt
-		echo $(date) >> log$i.txt
+		mkdir log$i
+		echo "log$i.txt" >> log$i/log$i.txt
+		echo "$(basename $BASH_SOURCE)" >> log$i/log$i.txt
+		echo $(date) >> log$i/log$i.txt
 	done
 }
 
