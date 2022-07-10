@@ -7,11 +7,12 @@ data() {
 logs() {
 	mkdir logs
 	cd logs
-	for i in {1..5}
+	for i in {1..100}
 	do
-		echo "log$i.txt" >> log$i.txt
-		echo "$(basename $BASH_SOURCE)" >> log$i.txt
-		echo $(date) >> log$i.txt
+		mkdir log$i
+		echo "log$i.txt" >> log$i/log$i.txt
+		echo "$(basename $BASH_SOURCE)" >> log$i/log$i.txt
+		echo $(date) >> log$i/log$i.txt
 	done
 }
 
@@ -64,10 +65,10 @@ pomoc() {
 
 
 case $1 in
-	--date)
+	--date | -d)
 		data
 		;;
-	--logs)
+	--logs | -l)
 		if [ $# -eq 2 ]
 		then
 			logsNumber $2
@@ -86,7 +87,7 @@ case $1 in
 			error
 		fi
 		;;
-	--help)
+	--help | -h)
 		pomoc
 		;;
 	*)
