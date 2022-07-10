@@ -26,6 +26,13 @@ logsNumber() {
 	done
 }
 
+pomoc() {
+	echo "--date - wyświetla obecną datę"
+	echo "--logs - tworzy katalog logs, a w nim 100 plików logów"
+	echo "--logs (numer) - tworzy katalog logs, a w nim (numer) plików logów"
+	echo "--help - dostępne komendy"
+}
+
 case $1 in
 	--date)
 		data
@@ -37,6 +44,9 @@ case $1 in
 		else
 			logs
 		fi
+		;;
+	--help)
+		pomoc
 		;;
 	*)
 		echo "Podaj odpowiedni argument"
