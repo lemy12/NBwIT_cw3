@@ -28,9 +28,12 @@ logsNumber() {
 
 pomoc() {
 	echo "--date - wyświetla obecną datę"
+	echo "--date -d - ???"
 	echo "--logs - tworzy katalog logs, a w nim 100 plików logów"
 	echo "--logs (numer) - tworzy katalog logs, a w nim (numer) plików logów"
+	echo "--logs -l - ???"
 	echo "--help - dostępne komendy"
+	echo "--help -h - ???"
 }
 
 case $1 in
