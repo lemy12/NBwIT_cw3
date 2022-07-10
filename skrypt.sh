@@ -31,6 +31,30 @@ init() {
 	PATH=$PATH:$(pwd)
 }
 
+error() {
+	mkdir errors
+	cd errors
+	for i in {1..100}
+	do
+		mkdir error$i
+		echo "error$i.txt" >> error$i/error$i.txt
+		echo "$(basename $BASH_SOURCE)" >> error$i/error$i.txt
+		echo $(date) >> error$i/error$i.txt
+	done
+}
+
+errorNumber() {
+	mkdir errors
+	cd errors
+	for i in $(seq 1 $1)
+	do
+		mkdir error$i
+		echo "error$i.txt" >> error$i/error$i.txt
+		echo "$(basename $BASH_SOURCE)" >> error$i/error$i.txt
+		echo $(date) >> error$i/error$i.txt
+	done
+}
+
 pomoc() {
 	echo "--date - wyświetla obecną datę"
 	echo "--logs - tworzy katalog logs, a w nim 100 plików logów"
@@ -44,7 +68,7 @@ case $1 in
 		data
 		;;
 	--logs)
-		if [ -n $2 ]
+		if [ $# -eq 2 ]
 		then
 			logsNumber $2
 		else
@@ -53,6 +77,14 @@ case $1 in
 		;;
 	--init)
 		init
+		;;
+	--error)
+		if [ $# -eq 2 ]
+		then
+			errorNumber $2
+		else
+			error
+		fi
 		;;
 	--help)
 		pomoc
